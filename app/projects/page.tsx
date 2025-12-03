@@ -27,17 +27,17 @@ export default function Projects() {
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow bg-white"
+                        className="border border-border rounded-xl p-6 hover:shadow-lg transition-shadow bg-card"
                     >
                         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                        <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                        <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                             {project.description}
                         </p>
                         <div className="flex flex-wrap gap-2 mb-4">
                             {project.tags.map((tag) => (
                                 <span
                                     key={tag}
-                                    className="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md font-medium"
+                                    className="px-2 py-1 bg-secondary text-secondary-foreground text-xs rounded-md font-medium"
                                 >
                                     {tag}
                                 </span>
@@ -45,7 +45,7 @@ export default function Projects() {
                         </div>
                         <a
                             href={project.link}
-                            className="text-sm font-medium text-black hover:underline underline-offset-4"
+                            className="text-sm font-medium text-primary hover:underline underline-offset-4"
                         >
                             View Project &rarr;
                         </a>
