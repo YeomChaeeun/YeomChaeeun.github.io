@@ -10,6 +10,13 @@ export default function Home() {
         <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
           A passionate developer focused on building accessible and performant web applications.
           I love turning complex problems into simple, beautiful solutions.
+          <br />
+          <span className="mt-4 block">
+            I also write about my learning journey and thoughts.{" "}
+            <Link href="/thinks" className="text-blue-600 hover:underline font-medium">
+              Read my thinks →
+            </Link>
+          </span>
         </p>
         <div className="flex gap-4 pt-4">
           <Link
