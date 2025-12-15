@@ -1,90 +1,87 @@
 "use client";
 
 import Link from "next/link";
-import { Badge } from "@/components/ui/Badge";
-import { Github, Mail } from "lucide-react";
-import { motion } from "framer-motion";
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-6">
-      <motion.div
-        initial="initial"
-        animate="animate"
-        variants={staggerContainer}
-        className="max-w-4xl w-full space-y-6"
-      >
-        <motion.h1
-          variants={fadeInUp}
-          className="text-5xl md:text-6xl font-bold tracking-tight"
-        >
-          안녕하세요,
-          <br />
-          <span className="text-primary">염채은</span>입니다.
-        </motion.h1>
+    <main className="max-w-4xl mx-auto px-6 py-20 space-y-32">
+      {/* Hero Section */}
+      <section className="space-y-8">
+        <div className="space-y-4">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
+            Chae Yeom
+          </h1>
+          <h2 className="text-2xl md:text-3xl text-muted-foreground font-medium">
+            Frontend Developer
+          </h2>
+        </div>
 
-        <motion.p
-          variants={fadeInUp}
-          className="text-xl text-muted-foreground max-w-2xl leading-relaxed"
-        >
-          사용자 중심의 UI/UX를 만드는 프론트엔드 개발자입니다.
-          <br />
-          복잡한 문제를 간결하고 명료하게 풀어내는 것을 좋아합니다.
-          <br />
-          <span className="mt-4 block">
-            배우고 생각한 것들을 글로 기록합니다.{" "}
-            <Link href="/thinks" className="text-primary hover:underline font-medium">
-              Read my thinks →
-            </Link>
-          </span>
-        </motion.p>
+        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+          Building accessible and accessible web experiences at <span className="text-foreground font-semibold">Jium Knowledge Service</span> since 2020.
+          Passionate about clean code, UI design systems, and developer experience.
+        </p>
+      </section>
 
-        <motion.div variants={fadeInUp} className="flex flex-wrap gap-2">
-          <Badge variant="secondary">React</Badge>
-          <Badge variant="secondary">TypeScript</Badge>
-          <Badge variant="secondary">Next.js</Badge>
-          <Badge variant="secondary">TailwindCSS</Badge>
-          <Badge variant="secondary">React Query</Badge>
-        </motion.div>
+      {/* Career Highlights */}
+      <section className="space-y-12">
+        <h2 className="text-3xl font-bold tracking-tight">Career Highlights</h2>
 
-        <motion.div variants={fadeInUp} className="flex gap-4 pt-4">
-          <Link
-            href="/about"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
-          >
-            About Me
-          </Link>
+        <div className="space-y-12">
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold">Key Projects</h3>
+            <ul className="space-y-3 text-muted-foreground text-lg list-disc list-inside marker:text-foreground">
+              <li>Naver Financial - Frontend Development</li>
+              <li>Prudential x KB - Mobile Web Integration</li>
+              <li>Shinhan x Orange - Interactive Dashboard</li>
+            </ul>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold">Publications</h3>
+            <p className="text-lg text-muted-foreground">
+              Co-author, <span className="italic text-foreground">Flutter In Action</span> (2023)
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold">Tech Stack</h3>
+            <p className="text-lg text-muted-foreground">
+              React, Next.js, TypeScript, TailwindCSS, Flutter
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="space-y-8 pb-10">
+        <h2 className="text-3xl font-bold tracking-tight">Contact</h2>
+        <div className="flex gap-6">
           <Link
             href="https://github.com/YeomChaeeun"
             target="_blank"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-accent transition-colors"
+            className="text-muted-foreground hover:text-foreground transition-colors"
           >
-            <Github className="w-5 h-5" />
-            GitHub
+            <Github size={28} strokeWidth={1.5} />
+            <span className="sr-only">GitHub</span>
           </Link>
           <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-accent transition-colors"
+            href="https://linkedin.com/in/yeomchaeeun"
+            target="_blank"
+            className="text-muted-foreground hover:text-foreground transition-colors"
           >
-            <Mail className="w-5 h-5" />
-            Contact
+            <Linkedin size={28} strokeWidth={1.5} />
+            <span className="sr-only">LinkedIn</span>
           </Link>
-        </motion.div>
-      </motion.div>
+          <Link
+            href="mailto:chae.yeom@example.com"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Mail size={28} strokeWidth={1.5} />
+            <span className="sr-only">Email</span>
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
