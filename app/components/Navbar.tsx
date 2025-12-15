@@ -7,7 +7,6 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 const navItems = [
     { name: "Home", path: "/" },
     { name: "Projects", path: "/projects" },
-    { name: "Thinks", path: "/thinks" },
 ];
 
 export default function Navbar() {

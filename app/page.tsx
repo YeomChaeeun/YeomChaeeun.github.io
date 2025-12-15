@@ -53,6 +53,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Technical Blog */}
+      <section className="space-y-4">
+        <h2 className="text-3xl font-bold tracking-tight">Technical Blog</h2>
+        <div className="space-y-2">
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            학습 내용과 기술 노트를 정리합니다.
+          </p>
+          <Link
+            href="/thinks"
+            className="inline-flex items-center gap-1 text-lg font-medium text-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+          >
+            블로그 보러가기 <span aria-hidden="true">&rarr;</span>
+          </Link>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="space-y-8 pb-10">
         <h2 className="text-3xl font-bold tracking-tight">Contact</h2>
